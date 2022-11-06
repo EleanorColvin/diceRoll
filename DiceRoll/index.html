@@ -1,0 +1,43 @@
+<!--Eleanor Colvin Web Development pd.7/8 odd-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //correctly sets all values
+        function initialize()
+        {
+            randNumOutput = document.getElementById("roll1");
+            randNumOutput2 = document.getElementById("roll2");
+            sumOutput = document.getElementById("sum");
+            diceRoll();
+        }
+        //generates two random numbers between 1 and 6, then sums them (sets variables)
+        function diceRoll()
+        {
+            roll1 = parseInt((Math.random()*6)+1);
+            roll2 = parseInt((Math.random()*6)+1);
+            sum = roll1 + roll2;
+            console.log(sum);
+            display();
+        }
+        //sets all three values to those generated during the dice roll
+        function display()
+        {
+            randNumOutput.innerHTML = roll1;
+            randNumOutput2.innerHTML = roll2;
+            sumOutput.innerHTML = sum;
+        }
+    </script>
+</head>
+<!--Button for dice roll, displays both roll values and the sum-->
+<body onload = initialize()>
+    <button onclick = "diceRoll();">Roll dice</button> <br/>
+    Dice 1 Roll: <span id = "roll1">0</span><br/>
+    Dice 2 Roll: <span id = "roll2">0</span><br/>
+    Dice Roll Sum: <span id = "sum">0</span>
+</body>
+</html>
